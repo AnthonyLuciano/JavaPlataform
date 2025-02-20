@@ -1,0 +1,21 @@
+Plataforma Roadmap:
+
+    jogador  V
+
+    movimento  V
+
+    plataformas  V
+
+    plano de fundo
+
+    inimigos
+
+    mais areas
+
+    sprites
+
+    musica
+    
+    som
+
+    habilidades:TODO
