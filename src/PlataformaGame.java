@@ -28,7 +28,12 @@ public class PlataformaGame extends JPanel implements KeyListener, Runnable {
         addKeyListener(this);
 
         // Carrega o fundo (substitua pelo caminho da sua imagem)
-        background = new ImageIcon("italy.png").getImage();
+        try {
+            background = new ImageIcon("italy.png").getImage();
+        } catch (Exception e) {
+            System.err.println("Error loading background image: " + e.getMessage());
+            background = null; // Set background to null if loading fails
+        }
 
         // Cria as plataformas
         platforms = new ArrayList<>();
@@ -46,7 +51,9 @@ public class PlataformaGame extends JPanel implements KeyListener, Runnable {
         super.paintComponent(g);
 
         // Desenha o fundo
-        g.drawImage(background, 0, 0, getWidth(), getHeight(), this);
+        if (background != null) {
+            g.drawImage(background, 0, 0, getWidth(), getHeight(), this);
+        }
 
         // Desenha as plataformas
         g.setColor(Color.GREEN);
